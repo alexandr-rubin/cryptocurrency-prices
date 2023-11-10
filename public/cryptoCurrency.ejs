@@ -45,11 +45,12 @@
     <table id="crypto-table">
       <thead>
         <tr>
+          <th>Rank</th>
           <th>Logo</th>
           <th>Name</th>
           <th>Symbol</th>
           <th>Price</th>
-          <!-- Добавьте другие заголовки, если необходимо -->
+          <th>Market Cap</th>
         </tr>
       </thead>
       <tbody id="crypto-body"></tbody>
@@ -72,6 +73,9 @@
         cryptoArray.forEach((crypto) => {
           const row = document.createElement('tr')
 
+          const marketCapRankCell = document.createElement('td')
+          marketCapRankCell.textContent = crypto.market_cap_rank
+
           const logoCell = document.createElement('td')
           const logo = document.createElement('img')
           logo.classList.add('crypto-img')
@@ -87,10 +91,15 @@
           const priceCell = document.createElement('td')
           priceCell.textContent = `$${crypto.current_price.toFixed(2)}`
 
+          const marketCapCell = document.createElement('td')
+          marketCapCell.textContent = `$${crypto.market_cap.toLocaleString()}`
+
+          row.appendChild(marketCapRankCell)
           row.appendChild(logoCell)
           row.appendChild(nameCell)
           row.appendChild(symbolCell)
           row.appendChild(priceCell)
+          row.appendChild(marketCapCell)
 
           cryptoBody.appendChild(row)
         })
