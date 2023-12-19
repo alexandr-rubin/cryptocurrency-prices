@@ -25,7 +25,7 @@ export default class CryptoCurrencyController {
 
       return cryptoList
     } catch (error: any) {
-      console.error('Error while fetching data:', error.message)
+      console.error('Error while fetching data: ', error.message)
     }
   }
 }
