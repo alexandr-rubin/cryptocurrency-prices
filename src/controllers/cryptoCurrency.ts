@@ -3,7 +3,7 @@ import axios from 'axios'
 
 @Controller('/crypto')
 export default class CryptoCurrencyController {
-  @Get('/currency')
+  @Get('/currency/all')
   async getCurrency() {
     try {
       const params = new URLSearchParams({
