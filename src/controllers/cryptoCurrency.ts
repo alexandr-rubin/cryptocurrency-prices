@@ -1,7 +1,7 @@
 import { Controller, Get } from 'amala'
 import axios from 'axios'
 
-@Controller('/crypto')
+@Controller('/crypto/coingecko/')
 export default class CryptoCurrencyController {
   @Get('/currency/all')
   async getCurrency() {
